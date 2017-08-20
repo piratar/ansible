@@ -1,0 +1,15 @@
+# Install all roles with
+# ansible-galaxy install -r requirements.yml
+
+
+# Install a role at a specific commit from GitHub
+#- name: opendaylight
+#  src: https://github.com/dfarrell07/ansible-opendaylight
+#  version: <commit hash>
+
+#TODO: maybe lock these down with a version commit hash?
+- name: docker
+  src: https://github.com/geerlingguy/ansible-role-docker
+
+- name: telegraf
+  src: https://github.com/rossmcdonald/telegraf

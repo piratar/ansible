@@ -1,0 +1,4 @@
+---
+
+- name: Copy docker-compose.yml
+  template: src=docker-compose.yml dest=/root

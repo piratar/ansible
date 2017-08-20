@@ -1,0 +1,9 @@
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+[piratar]
+piratar1 ansible_host='{{server_1_ip}}' ansible_user='{{server_1_user}}'
+
+[local]
+127.0.0.1     ansible_connection=local
+

@@ -1,0 +1,21 @@
+---
+
+- hosts: piratar1
+  roles:
+    - docker
+    - telegraf
+    - grafana-influx-docker
+
+  tasks:
+  - name: Install programs
+    apt: pkg={{ item }} state=installed update_cache=true cache_valid_time=3600
+    with_items:
+      - curl
+      - htop
+
+  - name: Create our working docker user
+    user:
+      name: {{working_user}}
+      shell: /bin/bash
+      generate_ssh_key: yes
+      group: docker
