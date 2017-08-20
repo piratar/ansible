@@ -15,7 +15,7 @@
 
   - name: Create our working docker user
     user:
-      name: {{working_user}}
+      name: "{{working_user}}"
       shell: /bin/bash
       generate_ssh_key: yes
       group: docker
