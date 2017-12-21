@@ -12,6 +12,8 @@ https-portal:
     DOMAINS: {{https_portal_domains}}
     STAGE: 'production'
     # FORCE_RENEW: 'true'
+  volumes:
+    - ./default.ssl.conf.erb:/var/lib/nginx-conf/default.ssl.conf.erb:ro
 
 influxdb:
   image: influxdb
@@ -22,7 +24,8 @@ influxdb:
   volumes:
     - "/var/lib/influxdb:/var/lib/influxdb"
   environment:
-    - "INFLUXDB_HTTP_AUTH_ENABLED=true"
+    - "INFLUXDB_HTTP_AUTH_ENABLED=false"
+   #- "INFLUXDB_HTTP_AUTH_ENABLED=true"
 
 grafana:
   image: grafana/grafana

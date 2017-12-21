@@ -13,3 +13,6 @@
 
 - name: telegraf
   src: https://github.com/rossmcdonald/telegraf
+
+- name: grafana-influx-docker
+  src: https://github.com/viktorsmari/influxdb-grafana-letsencrypt-docker
