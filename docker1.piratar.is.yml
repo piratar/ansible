@@ -1,6 +1,8 @@
 ---
 
 - hosts: piratar1
+  vars:
+    telegraf_hostname: pir1
   pre_tasks:
   - name: Install programs
     apt: pkg={{ item }} state=installed update_cache=true cache_valid_time=3600

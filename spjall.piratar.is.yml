@@ -1,0 +1,17 @@
+---
+
+- hosts: spjall
+  vars:
+    telegraf_hostname: spjall
+  pre_tasks:
+  - name: Install programs
+    apt: pkg={{ item }} state=installed update_cache=true cache_valid_time=3600
+    with_items:
+      - curl
+      - htop
+
+  roles:
+    #- docker
+    - telegraf
+
+  tasks:
